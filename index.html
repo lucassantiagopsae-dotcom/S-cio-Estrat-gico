@@ -1,0 +1,1491 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Sócio Estratégico Rugido — Uma jornada de 16 semanas de transformação estruturada para empresários de alto nível.">
+    <title>Sócio Estratégico — Timeline Rugido</title>
+    <link rel="icon" type="image/webp" href="assets/favicon.webp">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+
+    <style>
+        :root {
+            --verde: #1A5C2E;
+            --verde-medio: #276B38;
+            --verde-claro: #348B49;
+            --ouro: #C8A84B;
+            --ouro-claro: #E2C878;
+            --ouro-escuro: #9A7A1A;
+            --ouro-texto: #D4B35A;
+            --preto: #080C09;
+            --quase-preto: #0D110E;
+            --cinza-escuro: #161A17;
+            --cinza-medio: #232820;
+            --cinza: #363B32;
+            --cinza-claro: #6B7265;
+            --off-white: #F4F2E7;
+            --branco: #FAFAF4;
+            --glass: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --max-width: 1280px;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--preto);
+            color: var(--off-white);
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 300;
+            overflow-x: hidden;
+            cursor: none;
+        }
+
+        /* Noise Texture Overaly */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+            opacity: 0.05;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        /* Custom Cursor */
+        .cursor {
+            position: fixed;
+            width: 8px;
+            height: 8px;
+            background: var(--ouro);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            mix-blend-mode: difference;
+        }
+
+        .cursor-ring {
+            position: fixed;
+            width: 36px;
+            height: 36px;
+            border: 1px solid rgba(200, 168, 75, 0.45);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9998;
+            transform: translate(-50%, -50%);
+            transition: width .2s, height .2s, background .2s, border-color .2s;
+        }
+
+        .cursor-ring.h {
+            width: 56px;
+            height: 56px;
+            border-color: var(--ouro);
+            background: rgba(200, 168, 75, 0.05);
+        }
+
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--preto);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--cinza-medio);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--cinza);
+        }
+
+        /* ── HERO ── */
+        .hero {
+            min-height: 100vh;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-photo {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            display: block;
+            filter: grayscale(10%) contrast(1.1) brightness(0.7);
+            z-index: 0;
+        }
+
+        .hero-photo-overlay {
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(to top, var(--preto) 0%, rgba(8, 12, 9, 0.8) 30%, transparent 70%),
+                linear-gradient(to right, rgba(8, 12, 9, 0.5) 0%, transparent 60%);
+            z-index: 1;
+        }
+
+        .hero-glow {
+            position: absolute;
+            top: -15%;
+            left: -5%;
+            width: 50vw;
+            height: 50vw;
+            background: radial-gradient(circle, rgba(200, 168, 75, 0.1) 0%, transparent 60%);
+            pointer-events: none;
+            z-index: 1;
+            mix-blend-mode: screen;
+        }
+
+        .hero-ring {
+            position: absolute;
+            top: -20%;
+            left: -10%;
+            width: 60vw;
+            height: 60vw;
+            border: 1px solid rgba(200, 168, 75, 0.05);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .hero-vline {
+            position: absolute;
+            top: 24px;
+            left: 32px;
+            width: 1px;
+            height: 140px;
+            background: linear-gradient(to bottom, transparent, rgba(200, 168, 75, 0.6), transparent);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .hero-vline::after {
+            content: '';
+            position: absolute;
+            top: 70px;
+            left: -70px;
+            width: 140px;
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(200, 168, 75, 0.6), transparent);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 64px;
+        }
+
+        .hero-tag {
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--ouro);
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            opacity: 0;
+            animation: fadeUp 0.8s ease forwards 0.2s;
+        }
+
+        .hero-tag::before {
+            content: '';
+            width: 40px;
+            height: 1px;
+            background: var(--ouro);
+        }
+
+        .hero-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(64px, 12vw, 140px);
+            font-weight: 600;
+            line-height: 0.85;
+            letter-spacing: -0.03em;
+            opacity: 0;
+            animation: fadeUp 1s ease forwards 0.4s;
+        }
+
+        .hero-title .line1 {
+            display: block;
+            color: var(--off-white);
+        }
+
+        .hero-title .line2 {
+            display: block;
+            font-style: italic;
+            font-weight: 400;
+            color: var(--ouro-claro);
+        }
+
+        .hero-subtitle {
+            font-size: clamp(16px, 2vw, 20px);
+            font-weight: 300;
+            color: rgba(245, 242, 231, 0.8);
+            margin: 32px 0 48px;
+            max-width: 600px;
+            line-height: 1.6;
+            opacity: 0;
+            animation: fadeUp 1s ease forwards 0.6s;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 48px;
+            opacity: 0;
+            animation: fadeUp 1s ease forwards 0.8s;
+        }
+
+        .hero-stat span:first-child {
+            display: block;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 64px;
+            color: var(--ouro);
+            line-height: 1;
+        }
+
+        .hero-stat span:last-child {
+            display: block;
+            font-size: 10px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--cinza-claro);
+            margin-top: 4px;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Logo */
+        .hero-logo {
+            width: 80px;
+            height: auto;
+            margin-bottom: 36px;
+            opacity: 0;
+            animation: fadeUp .8s ease forwards .1s;
+        }
+
+        /* ── SECTION STATUS ── */
+        .status-section {
+            padding: 64px 0;
+            background: var(--quase-preto);
+            background-image:
+                linear-gradient(rgba(26, 92, 46, 0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(26, 92, 46, 0.04) 1px, transparent 1px);
+            background-size: 48px 48px;
+            border-top: 1px solid var(--glass-border);
+            border-bottom: 1px solid var(--glass-border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .status-section::before {
+            content: '';
+            position: absolute;
+            left: -160px;
+            top: -160px;
+            width: 440px;
+            height: 440px;
+            background: radial-gradient(circle, rgba(26, 92, 46, 0.14) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .container-main {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 64px;
+        }
+
+        .live-indicator {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(26, 92, 46, 0.15);
+            border: 1px solid rgba(26, 92, 46, 0.4);
+            border-radius: 4px;
+            padding: 8px 16px;
+            margin-bottom: 20px;
+            width: fit-content;
+        }
+
+        .live-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #4ADE80;
+            animation: livePulse 2s infinite;
+        }
+
+        @keyframes livePulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.5);
+            }
+
+            70% {
+                box-shadow: 0 0 0 10px rgba(74, 222, 128, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(74, 222, 128, 0);
+            }
+        }
+
+        .live-indicator span {
+            font-size: 11px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #4ADE80;
+            font-weight: 600;
+        }
+
+        .status-phase {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 400;
+            font-style: italic;
+            line-height: 1.2;
+            margin-bottom: 32px;
+        }
+
+        .status-phase strong {
+            font-style: normal;
+            font-weight: 700;
+            color: var(--ouro-claro);
+        }
+
+        .progress-container {
+            width: 100%;
+        }
+
+        .progress-label {
+            font-size: 10px;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--cinza-claro);
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .week-grid {
+            display: flex;
+            gap: 12px;
+            overflow-x: auto;
+            padding-top: 15px;
+            padding-bottom: 24px; /* for glow/scroll */
+            margin-top: -15px;
+        }
+        
+        .week-grid::-webkit-scrollbar { display: none; } /* Hide scrollbar for aesthetics */
+
+        .week-item {
+            flex: 1;
+            aspect-ratio: 1;
+            min-width: 48px; /* ensures they don't crush too much on small screens */
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--cinza-claro);
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(16px, 2vw, 24px);
+        }
+
+        .item-icon {
+            font-size: 11px;
+            opacity: 0.8;
+            margin-top: 4px;
+            font-family: sans-serif;
+        }
+
+        .week-item.done {
+            background: rgba(39, 107, 56, 0.9); /* verde */
+            border-color: rgba(39, 107, 56, 1);
+            color: white;
+        }
+
+        .week-item.current {
+            background: rgba(200, 168, 75, 0.4);
+            border-color: var(--ouro);
+            color: var(--ouro-claro);
+            box-shadow: 0 0 20px rgba(200, 168, 75, 0.5);
+            transform: translateY(-2px);
+            z-index: 2;
+        }
+
+        .week-item.current .item-icon { 
+            opacity: 1; 
+            color: var(--ouro-claro); 
+            font-size: 18px; 
+            line-height: 0.5;
+            margin-top: 6px;
+        }
+
+        /* ── TIMELINE ── */
+        .timeline-section {
+            padding: 100px 0;
+            background-image:
+                linear-gradient(rgba(26, 92, 46, 0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(26, 92, 46, 0.04) 1px, transparent 1px);
+            background-size: 48px 48px;
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 64px;
+            border-bottom: 1px solid var(--glass-border);
+            padding-bottom: 24px;
+        }
+
+        .timeline-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(48px, 6vw, 72px);
+            font-weight: 600;
+        }
+
+        .timeline-title em {
+            font-style: italic;
+            font-weight: 400;
+            color: var(--ouro);
+        }
+
+        .timeline-year {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 80px;
+            line-height: 0.8;
+            color: transparent;
+            -webkit-text-stroke: 1px var(--glass-border);
+        }
+
+        .phase-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 4px;
+        }
+
+        .phase-card {
+            background: var(--cinza-escuro);
+            border: 1px solid var(--glass-border);
+            border-radius: 6px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            position: relative;
+        }
+
+        .phase-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--cinza);
+            transition: background 0.3s, box-shadow 0.3s;
+            z-index: 2;
+        }
+
+        .phase-card.done::before { background: var(--verde-medio); }
+
+        .phase-card.active::before {
+            background: linear-gradient(to bottom, var(--ouro-claro), var(--ouro-escuro));
+            box-shadow: 2px 0 10px rgba(200,168,75,0.3);
+        }
+
+        .phase-card:hover { border-color: rgba(200, 168, 75, 0.3); }
+        .phase-card.done:hover { border-color: rgba(39, 107, 56, 0.6); }
+        .phase-card.active { border-color: rgba(200, 168, 75, 0.5); }
+        .phase-card.expanded { border-color: rgba(200, 168, 75, 0.6); }
+        .phase-card.expanded { border-color: rgba(200, 168, 75, 0.6); }
+        .phase-card.done.expanded { border-color: rgba(39, 107, 56, 0.6); }
+
+        .phase-header-inner {
+            display: flex;
+            align-items: center;
+            padding: 32px 48px;
+            gap: 32px;
+            background: transparent;
+            transition: background 0.2s;
+        }
+
+        .phase-card:hover .phase-header-inner {
+            background: rgba(35, 40, 32, 0.9);
+        }
+        
+        .phase-card.done:hover .phase-header-inner {
+            background: rgba(26, 92, 46, 0.25);
+        }
+
+        .phase-card.expanded .phase-header-inner {
+            background: rgba(200, 168, 75, 0.05);
+        }
+
+        .phase-card.done.expanded .phase-header-inner {
+            background: rgba(26, 92, 46, 0.15);
+        }
+
+        .phase-num {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 64px;
+            color: rgba(255, 255, 255, 0.05);
+            line-height: 1;
+            min-width: 70px;
+        }
+
+        .phase-card.active .phase-num {
+            color: rgba(200, 168, 75, 0.45);
+        }
+
+        .phase-card.done .phase-num {
+            color: rgba(39, 107, 56, 0.3);
+        }
+
+        .phase-card.done.expanded .phase-num {
+            color: rgba(39, 107, 56, 0.4);
+        }
+
+        .phase-info {
+            flex: 1;
+        }
+
+        .phase-label {
+            font-size: 10px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--cinza-claro);
+            margin-bottom: 8px;
+        }
+
+        .phase-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 36px;
+            font-weight: 600;
+            line-height: 1;
+        }
+
+        .phase-card.active .phase-name {
+            color: var(--ouro-claro);
+        }
+
+        .phase-card.expanded .phase-name {
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        .phase-card.done.expanded .phase-name {
+            color: #4ADE80;
+        }
+
+        .phase-meta {
+            display: flex;
+            gap: 24px;
+            margin-top: 12px;
+            font-size: 12px;
+            color: var(--cinza-claro);
+        }
+
+        .phase-status-badge {
+            padding: 6px 14px;
+            border-radius: 2px;
+            font-size: 9px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .badge-done {
+            background: rgba(26, 92, 46, 0.2);
+            border: 1px solid rgba(26, 92, 46, 0.5);
+            color: #4ADE80;
+        }
+
+        .badge-current {
+            background: rgba(200, 168, 75, 0.15);
+            border: 1px solid rgba(200, 168, 75, 0.4);
+            color: var(--ouro-claro);
+            animation: glowAnim 3s infinite;
+        }
+
+        .badge-future {
+            background: transparent;
+            border: 1px solid var(--cinza);
+            color: var(--cinza-claro);
+        }
+
+        @keyframes glowAnim {
+
+            0%,
+            100% {
+                box-shadow: none;
+            }
+
+            50% {
+                box-shadow: 0 0 15px rgba(200, 168, 75, 0.3);
+            }
+        }
+
+        .phase-chevron {
+            font-size: 24px; /* Icon size */
+            display: flex;
+            align-items: center;
+            color: var(--cinza-claro);
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.4s;
+        }
+
+        .phase-card.active .phase-chevron {
+            color: var(--ouro);
+        }
+
+        .phase-card.expanded .phase-chevron {
+            transform: rotate(90deg);
+            color: var(--ouro);
+        }
+
+        .phase-card.done.expanded .phase-chevron {
+            transform: rotate(90deg);
+            color: #4ADE80;
+        }
+
+        /* Card Content */
+        .phase-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .phase-card.expanded .phase-body {
+            max-height: 2000px;
+        }
+
+        .phase-body-inner {
+            padding: 0 48px 48px;
+        }
+
+        /* Active Callout */
+        .act-callout {
+            margin: 0 -48px;
+            padding: 13px 48px;
+            background: rgba(200, 168, 75, 0.055);
+            border-top: 1px solid rgba(200, 168, 75, 0.14);
+            border-bottom: 1px solid rgba(200, 168, 75, 0.14);
+            margin-bottom: 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .act-callout iconify-icon {
+            font-size: 16px;
+            color: var(--ouro);
+        }
+
+        .act-callout div {
+            font-size: 13px;
+            color: var(--cinza-claro);
+        }
+
+        .act-callout strong {
+            color: var(--ouro-claro);
+            font-weight: 400;
+        }
+
+        /* Week Strip */
+        .week-strip {
+            display: flex;
+            gap: 4px;
+            border-top: 1px solid var(--glass-border);
+            padding-top: 32px;
+            margin-bottom: 40px;
+        }
+
+        .wpip {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .wpip-bar {
+            height: 3px;
+            width: 100%;
+            background: var(--cinza);
+            border-radius: 2px;
+            position: relative;
+        }
+
+        .wpip-fill {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background: var(--ouro);
+            border-radius: 2px;
+            width: 0%;
+            transition: width 1s ease;
+        }
+
+        .wpip.done .wpip-fill {
+            background: var(--verde-medio);
+            width: 100% !important;
+        }
+
+        .wpip.current .wpip-fill {
+            box-shadow: 0 0 10px var(--ouro);
+        }
+
+        .wpip-label {
+            font-size: 9px;
+            color: var(--cinza-claro);
+            font-weight: 500;
+        }
+
+        .wpip.current .wpip-label {
+            color: var(--ouro);
+        }
+
+        /* Subtopics Grid */
+        .sub-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        @media (max-width: 900px) {
+            .sub-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .sub-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--glass-border);
+            border-radius: 6px;
+            padding: 24px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        .sub-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+            border-color: rgba(200, 168, 75, 0.2);
+        }
+        
+        .sub-card.done:hover {
+            border-color: rgba(39, 107, 56, 0.4);
+        }
+
+        .sub-card::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 140px;
+            height: 140px;
+            background: radial-gradient(circle at center, rgba(200, 168, 75, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .sub-card.done::before {
+            background: radial-gradient(circle at center, rgba(26, 92, 46, 0.08) 0%, transparent 70%);
+        }
+
+        .sub-card:hover::before {
+            opacity: 1;
+            background: radial-gradient(circle at center, rgba(200, 168, 75, 0.15) 0%, transparent 70%);
+        }
+
+        .sub-card.done:hover::before {
+            opacity: 1;
+            background: radial-gradient(circle at center, rgba(26, 92, 46, 0.15) 0%, transparent 70%);
+        }
+
+
+        .sub-tag {
+            font-size: 9px;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--ouro-texto);
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .sub-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .sub-duration {
+            font-size: 12px;
+            color: var(--cinza-claro);
+            margin-bottom: 20px;
+        }
+
+        .sub-progress {
+            height: 1px;
+            background: var(--glass-border);
+            margin-bottom: 24px;
+            position: relative;
+        }
+
+        .sub-progress-fill {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            transition: width 1s ease;
+        }
+
+        .fill-done {
+            background: var(--verde-medio);
+        }
+
+        .fill-current {
+            background: var(--ouro);
+            box-shadow: 0 0 10px var(--ouro);
+        }
+
+        .action-list {
+            list-style: none;
+        }
+
+        .action-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+            transition: transform 0.2s ease, color 0.2s ease;
+        }
+        
+        .action-item:hover {
+            transform: translateX(4px);
+            color: var(--ouro-claro);
+            cursor: default;
+        }
+
+        .action-item:last-child {
+            border-bottom: none;
+        }
+
+        .action-item.done {
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .action-item.current {
+            color: var(--off-white);
+            font-weight: 400;
+        }
+
+        .action-num {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.1);
+            width: 24px;
+        }
+
+        .action-item.current .action-num {
+            color: var(--ouro-escuro);
+        }
+
+        .action-check {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            border: 1px solid var(--cinza);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            color: var(--preto);
+            flex-shrink: 0;
+        }
+
+        .action-item.done .action-check {
+            border-color: transparent;
+            color: #4ADE80;
+            font-size: 20px;
+        }
+
+        .action-item.current .action-check {
+            border-color: var(--ouro);
+        }
+
+        .check-icon {
+            width: 8px;
+            height: 8px;
+            fill: none;
+            stroke: white;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        /* Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 80px 0;
+            border-top: 1px solid var(--glass-border);
+            text-align: center;
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+
+        .footer-logo {
+            width: 60px;
+            height: auto;
+        }
+
+        .footer-brand em {
+            font-style: italic;
+            color: var(--ouro);
+        }
+
+        .footer-meta {
+            font-size: 12px;
+            color: var(--cinza-claro);
+            line-height: 1.8;
+            letter-spacing: 0.05em;
+        }
+
+        @media (max-width: 768px) {
+            .hero-photo {
+                object-position: center top;
+            }
+
+            .hero-content {
+                padding: 0 24px;
+            }
+
+            .container-main {
+                padding: 0 24px;
+            }
+
+            .phase-header-inner {
+                padding: 24px;
+                gap: 20px;
+            }
+
+            .phase-body-inner {
+                padding: 0 24px 32px;
+            }
+
+            .week-grid {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 8px;
+            }
+
+            .week-item {
+                flex: none;
+                width: calc(25% - 8px); /* 4 per row */
+                min-width: 60px;
+                aspect-ratio: 1;
+            }
+
+            .act-callout {
+                margin: 0 -24px;
+                padding: 13px 24px;
+            }
+
+            .phase-num {
+                font-size: 48px;
+                min-width: 50px;
+            }
+
+            .phase-name {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-ring" id="cursor-ring"></div>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero">
+            <picture>
+                <source media="(max-width: 768px)" srcset="assets/background_hero_socio_estrategico_mobile.webp">
+                <img class="hero-photo" src="assets/socio-estrategico-rugido-hero.webp"
+                    alt="Sócio Estratégico Rugido - Planejamento e Estratégia Timeline">
+            </picture>
+            <div class="hero-photo-overlay"></div>
+
+            <div class="hero-content">
+                <div class="hero-glow"></div>
+                <div class="hero-ring"></div>
+                <div class="hero-vline"></div>
+                <img class="hero-logo" src="assets/logo.webp" alt="Sócio Estratégico Rugido">
+                <div class="hero-tag">Início 13 de Abril · 2026</div>
+
+                <div class="hero-title">
+                    <span class="line1">Sócio</span>
+                    <span class="line2">Estratégico</span>
+                </div>
+
+                <p class="hero-subtitle">
+                    Quatro meses de transformação estruturada. Uma jornada exclusiva desenhada para empresários que
+                    jogam no mais alto nível de mercado.
+                </p>
+
+                <div class="hero-stats">
+                    <div class="hero-stat"><span>6</span><span>Fases</span></div>
+                    <div class="hero-stat"><span>16</span><span>Semanas</span></div>
+                    <div class="hero-stat"><span>40</span><span>Ações</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- STATUS -->
+        <section class="status-section">
+            <div class="container-main">
+                <div class="live-indicator">
+                    <div class="live-dot"></div>
+                    <span>Status Ao Vivo</span>
+                </div>
+
+                <div class="status-phase" id="status-display">Calculando progresso atual...</div>
+
+                <div class="progress-container">
+                    <span class="progress-label">Cronograma — 16 Semanas</span>
+                    <div class="week-grid" id="week-bar">
+                        <!-- Iterated by JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TIMELINE GRID -->
+        <section class="timeline-section">
+            <div class="container-main">
+                <div class="timeline-header reveal">
+                    <h2 class="timeline-title">Linha do <em>Tempo</em></h2>
+                    <div class="timeline-year">2026</div>
+                </div>
+
+                <div class="phase-grid" id="timeline-grid">
+                    <!-- Iterated by JS -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container-main">
+            <div class="footer-brand">
+                <img class="footer-logo" src="assets/logo.webp" alt="Logo Rugido">
+                <span>Sócio <em>Estratégico</em></span>
+            </div>
+            <div class="footer-meta" id="footer-meta">
+                Início: 13 Abr 2026 · 16 Semanas + Pré-Aceleração<br>
+                Rugido Estratégia e Planejamento · Todos os direitos reservados
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ── CONFIGURATION ──
+        const START_DATE = new Date('2026-04-13T00:00:00');
+        const TOTAL_WEEKS = 16;
+
+        const DATA = [
+            {
+                id: 0,
+                name: 'Preparação',
+                label: 'Fase 00',
+                subs: [
+                    { name: 'Onboarding & Interação', weeks: [0], actions: ['Apresentação do programa', 'Alinhamento de expectativas', 'Onboarding da metodologia'] },
+                    { name: 'Diagnóstico 4×4', weeks: [1], actions: ['Diagnóstico completo do negócio', 'Identificação de KPIs primários'] },
+                    { name: 'Mapa de Fase', weeks: [2], actions: ['Mapeamento da situação atual', 'Identificação do travamento central'] }
+                ]
+            },
+            {
+                id: 1,
+                name: 'Receita',
+                label: 'Fase 01',
+                subs: [
+                    { name: 'Canais de Aquisição', weeks: [3], actions: ['Canais Proprietários', 'Mídia Paga', 'Gestão de Tráfego', 'Eventos'] },
+                    { name: 'Cultura de Vendas', weeks: [4], actions: ['Análise de Dados Comercial', 'Padronização de Processos', 'Treinamento de Time'] },
+                    { name: 'Entrega de Pilar', weeks: [5], actions: ['Consolidação do pilar Receita', 'Revisão de Metas'] }
+                ]
+            },
+            {
+                id: 2,
+                name: 'Estratégia',
+                label: 'Fase 02',
+                subs: [
+                    { name: 'Pesquisa de Mercado', weeks: [6], actions: ['Panorama do Setor', 'Análise Competitiva', 'Posicionamento'] },
+                    { name: 'Alinhamento Estratégico', weeks: [7], actions: ['Esteira de Produtos/Serviços', 'Educação do Cliente', 'Fidelização'] },
+                    { name: 'Entrega de Pilar', weeks: [8], actions: ['Consolidação do pilar Estratégia', 'Ajuste de Rota'] }
+                ]
+            },
+            {
+                id: 3,
+                name: 'Gestão',
+                label: 'Fase 03',
+                subs: [
+                    { name: 'Cultura & Pessoas', weeks: [9], actions: ['Desenvolvimento de Talentos', 'Rituais de Gestão', 'Mandamentos'] },
+                    { name: 'Governança & Financeiro', weeks: [10], actions: ['Parceria de Resultados', 'Compliance', 'Budget & Forecasting'] },
+                    { name: 'Entrega de Pilar', weeks: [11], actions: ['Consolidação do pilar Gestão', 'Eficiência Organizacional'] }
+                ]
+            },
+            {
+                id: 4,
+                name: 'Operação',
+                label: 'Fase 04',
+                subs: [
+                    { name: 'Processos & Clientes', weeks: [12], actions: ['Manual de Processos (POP)', 'Retenção & CS', 'Expansão'] },
+                    { name: 'Produto & Tecnologia', weeks: [13], actions: ['Escalabilidade de Produto', 'Implementação de AI', 'Gestão de Dados'] },
+                    { name: 'Entrega de Pilar', weeks: [14], actions: ['Consolidação do pilar Operação', 'Automação'] }
+                ]
+            },
+            {
+                id: 5,
+                name: 'Entrega Final',
+                label: 'Graduação',
+                subs: [
+                    { name: 'Encerramento & Futuro', weeks: [15, 16], actions: ['Entrega completa do programa', 'Plano de próximos passos', 'Cerimônia de encerramento'] }
+                ]
+            }
+        ];
+
+        // ── CORE LOGIC ──
+        const addDays = (date, days) => {
+            const result = new Date(date);
+            result.setDate(result.getDate() + days);
+            return result;
+        };
+
+        const getWeekRange = (w) => {
+            const start = addDays(START_DATE, (w - 1) * 7);
+            const end = addDays(START_DATE, w * 7 - 1);
+            return { start, end };
+        };
+
+        const formatDate = (date) => date.toLocaleDateString('pt-BR', { day: '2-digit', month: 'short' });
+        const formatFullDate = (date) => date.toLocaleDateString('pt-BR', { weekday: 'long', day: '2-digit', month: 'long', year: 'numeric' });
+
+        function getCurrentState() {
+            const now = new Date();
+            const diffTime = now - START_DATE;
+            const currentWeek = Math.floor(diffTime / (1000 * 60 * 60 * 24 * 7)) + 1;
+
+            if (now < START_DATE) return { type: 'pre', week: 0 };
+            if (currentWeek > TOTAL_WEEKS) return { type: 'post', week: TOTAL_WEEKS + 1 };
+
+            let currentPhase = null;
+            let currentSub = null;
+
+            for (const phase of DATA) {
+                const flatWeeks = phase.subs.flatMap(s => s.weeks);
+                if (currentWeek >= Math.min(...flatWeeks) && currentWeek <= Math.max(...flatWeeks)) {
+                    currentPhase = phase;
+                    currentSub = phase.subs.find(s => s.weeks.includes(currentWeek));
+                    break;
+                }
+            }
+
+            return { type: 'live', week: currentWeek, phase: currentPhase, sub: currentSub };
+        }
+
+        // ── RENDERING ──
+        function renderWeekBar(state) {
+            const container = document.getElementById('week-bar');
+            container.innerHTML = '';
+
+            for (let i = 1; i <= TOTAL_WEEKS; i++) {
+                const item = document.createElement('div');
+                item.className = 'week-item';
+                
+                let iconContentHTML = '';
+                let titleText = '';
+
+                if (state.type === 'post' || (state.type === 'live' && i < state.week)) {
+                    item.classList.add('done');
+                    iconContentHTML = '<div class="item-icon" style="display:flex;align-items:center;"><iconify-icon icon="solar:check-circle-bold" width="16"></iconify-icon></div>';
+                    titleText = `Semana ${i} (Concluída)`;
+                }
+                else if (state.type === 'live' && i === state.week) {
+                    item.classList.add('current');
+                    iconContentHTML = '<div class="item-icon" style="display:flex;align-items:center;"><iconify-icon icon="solar:record-circle-bold" width="16"></iconify-icon></div>';
+                    titleText = `Semana ${i} (Em Andamento)`;
+                } else {
+                    titleText = `Semana ${i} (Pendente)`;
+                }
+
+                item.title = titleText;
+                item.innerHTML = `S${i}${iconContentHTML}`;
+                container.appendChild(item);
+            }
+        }
+
+        function renderStatus(state) {
+            const display = document.getElementById('status-display');
+            if (state.type === 'pre') {
+                display.innerHTML = `Próximo Início: <strong>13 de Abril de 2026</strong>`;
+            } else if (state.type === 'post') {
+                display.innerHTML = `Projeto <strong>Concluído</strong> com sucesso.`;
+            } else {
+                const phaseName = state.phase ? state.phase.name : 'Transição';
+                const subName = state.sub ? state.sub.name : '';
+                
+                const now = new Date();
+                const options = { weekday: 'long', day: '2-digit', month: 'long', year: 'numeric' };
+                const dateStr = now.toLocaleDateString('pt-BR', options);
+
+                display.innerHTML = `${phaseName} · <strong>S${state.week} — ${subName}</strong> · Semana ${state.week} de 16<div style="font-size: 14px; color: var(--cinza-claro); margin-top: 8px; font-family: 'DM Sans', sans-serif; font-style: normal;">${dateStr}</div>`;
+            }
+        }
+
+        function renderTimeline(state) {
+            const container = document.getElementById('timeline-grid');
+            container.innerHTML = '';
+            let actionCounter = 1;
+
+            DATA.forEach((phase, idx) => {
+                const allWeeks = phase.subs.flatMap(s => s.weeks).filter(w => w > 0);
+                const wMin = Math.min(...allWeeks);
+                const wMax = Math.max(...allWeeks);
+                const dateStart = getWeekRange(wMin || 1).start;
+                const dateEnd = getWeekRange(wMax || 1).end;
+
+                let cardState = 'future';
+                if (state.type === 'post' || (state.type === 'live' && state.week > wMax)) cardState = 'done';
+                else if (state.type === 'live' && state.week >= wMin && state.week <= wMax) cardState = 'active';
+
+                const isActive = cardState === 'active';
+                const statusBadge = cardState === 'done' ? 'Concluído' : isActive ? 'Em andamento' : 'Em breve';
+                const badgeClass = cardState === 'done' ? 'badge-done' : isActive ? 'badge-current' : 'badge-future';
+
+                let progress = 0;
+                if (cardState === 'done') progress = 100;
+                else if (isActive) progress = ((state.week - wMin) / (wMax - wMin + 1)) * 100;
+
+                const card = document.createElement('div');
+                card.className = `phase-card reveal ${cardState}`;
+                card.onclick = () => {
+                    document.querySelectorAll('.phase-card').forEach(c => { if (c !== card) c.classList.remove('expanded') });
+                    card.classList.toggle('expanded');
+                };
+
+                // Subtopics HTML
+                let subsHTML = '';
+                phase.subs.forEach(sub => {
+                    const sMin = Math.min(...sub.weeks);
+                    const sMax = Math.max(...sub.weeks);
+
+                    let subStatus = 'future';
+                    let subFill = 0;
+                    if (state.type === 'post' || (state.type === 'live' && state.week > sMax)) {
+                        subStatus = 'done';
+                        subFill = 100;
+                    } else if (state.type === 'live' && state.week >= sMin && state.week <= sMax) {
+                        subStatus = 'current';
+                        subFill = ((state.week - sMin) / (sMax - sMin + 1)) * 100;
+                    }
+
+                    let actionsHTML = '';
+                    sub.actions.forEach(act => {
+                        const actClass = subStatus === 'done' ? 'done' : subStatus === 'current' ? 'current' : '';
+                        const checkIcon = subStatus === 'done' ? `<iconify-icon icon="solar:check-circle-bold"></iconify-icon>` : '';
+                        actionsHTML += `
+                            <li class="action-item ${actClass}">
+                                <div class="action-num">${String(actionCounter++).padStart(2, '0')}</div>
+                                <div class="action-item-text">${act}</div>
+                                <div class="action-check">${checkIcon}</div>
+                            </li>`;
+                    });
+
+                    const weekLabel = sub.weeks[0] === 0 ? 'Pré-Início' : sub.weeks.length === 1 ? `Semana ${sub.weeks[0]}` : `Semanas ${sub.weeks[0]}-${sub.weeks[sub.weeks.length - 1]}`;
+
+                    subsHTML += `
+                        <div class="sub-card ${subStatus}">
+                            <span class="sub-tag">${weekLabel}</span>
+                            <h4 class="sub-title">${sub.name}</h4>
+                            <div class="sub-duration">${formatDate(getWeekRange(Math.max(1, sMin)).start)} → ${formatDate(getWeekRange(Math.max(1, sMax)).end)}</div>
+                            <div class="sub-progress"><div class="sub-progress-fill fill-${subStatus}" style="width: ${subFill}%"></div></div>
+                            <ul class="action-list">${actionsHTML}</ul>
+                        </div>`;
+                });
+
+                let calloutHTML = '';
+                if (isActive) {
+                    let curSubName = '';
+                    const curSub = phase.subs.find(s => state.week >= Math.min(...s.weeks) && state.week <= Math.max(...s.weeks));
+                    if (curSub) {
+                        curSubName = ` · Trabalhando em: <strong>${curSub.name}</strong>`;
+                    }
+                    calloutHTML = `
+                        <div class="act-callout">
+                            <iconify-icon icon="solar:star-fall-minimalistic-bold-duotone"></iconify-icon>
+                            <div>Fase <strong>ativa agora</strong> · Semana ${state.week} de 16${curSubName}</div>
+                        </div>
+                    `;
+                }
+
+                card.innerHTML = `
+                    <div class="phase-header-inner" title="Clique para expandir ou recolher os detalhes desta fase">
+                        <div class="phase-num">${String(phase.id + 1).padStart(2, '0')}</div>
+                        <div class="phase-info">
+                            <div class="phase-label">Fase ${phase.id + 1} · ${formatDate(dateStart)} → ${formatDate(dateEnd)}</div>
+                            <h3 class="phase-name">${phase.name}</h3>
+                        </div>
+                        <div class="phase-status-badge ${badgeClass}">${statusBadge}</div>
+                        <div class="phase-chevron"><iconify-icon icon="solar:alt-arrow-right-linear"></iconify-icon></div>
+                    </div>
+                    <div class="phase-body">
+                        <div class="phase-body-inner">
+                            ${calloutHTML}
+                            <div class="week-strip">
+                                ${allWeeks.map(w => {
+                    const wkState = (state.type === 'post' || (state.type === 'live' && state.week > w)) ? 'done' : (state.type === 'live' && state.week === w) ? 'current' : 'future';
+                    let fillWidth = 0;
+                    if (wkState === 'done') fillWidth = 100;
+                    else if (wkState === 'current') {
+                        const now = new Date();
+                        const wStart = getWeekRange(w).start;
+                        const passedDays = (now - wStart) / (1000 * 60 * 60 * 24);
+                        const clamped = Math.max(0, Math.min(7, passedDays));
+                        fillWidth = 10 + (clamped / 7) * 90;
+                    }
+                    const titleText = wkState === 'done' ? `Semana ${w} (Concluída)` : wkState === 'current' ? `Semana ${w} (Em Andamento)` : `Semana ${w} (Pendente)`;
+                    return `<div class="wpip ${wkState}" title="${titleText}"><div class="wpip-bar"><div class="wpip-fill" style="width: ${fillWidth}%;"></div></div><div class="wpip-label">S${w}</div></div>`;
+                }).join('')}
+                            </div>
+                            <div class="sub-grid">${subsHTML}</div>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // ── INTERACTIVITY ──
+        function initCursor() {
+            const cursor = document.getElementById('cursor');
+            const ring = document.getElementById('cursor-ring');
+            let mx = 0, my = 0, rx = 0, ry = 0;
+
+            document.addEventListener('mousemove', e => {
+                mx = e.clientX;
+                my = e.clientY;
+                cursor.style.left = `${mx}px`;
+                cursor.style.top = `${my}px`;
+            });
+
+            const animateRing = () => {
+                rx += (mx - rx) * 0.15;
+                ry += (my - ry) * 0.15;
+                ring.style.left = `${rx}px`;
+                ring.style.top = `${ry}px`;
+                requestAnimationFrame(animateRing);
+            };
+            animateRing();
+
+            document.addEventListener('mouseover', e => {
+                if (e.target.closest('.phase-card, button, a, .mcard-hd')) {
+                    ring.classList.add('h');
+                } else {
+                    ring.classList.remove('h');
+                }
+            });
+        }
+
+        // ── BOOTSTRAP ──
+        function render() {
+            const state = getCurrentState();
+            renderWeekBar(state);
+            renderStatus(state);
+            renderTimeline(state);
+
+            // Re-observe animations
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible') });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        }
+
+        initCursor();
+        render();
+        setInterval(render, 60000); // Update every minute
+    </script>
+</body>
+
+
+</html>
